@@ -2,7 +2,10 @@ import random
 
 class Dealer:
     def __init__(self):
-        pass
+        self.current_card = 0
+        self.previous_card = 0
+        self.guess = ""
+
     def draw_card():
         """
         Returns a random card, 1-13
@@ -12,7 +15,10 @@ class Dealer:
         """
         Determines the user's guess
         """
-        pass
+        self.guess = input("Higher or lower? [h/l] ").lower()
+        while self.guess not in ("h", "l"):
+            print("\nError: please enter \'h\' or \'l\'")
+            self.guess = input("Higher or lower? [h/l] ").lower()
     def can_play(self):
         """
         Determines whether the player can still play, then asks if they would like to play again
@@ -22,4 +28,11 @@ class Dealer:
         """
         Returns points based on the user's guess
         """
-        pass
+        if self.guess == "h" and self.current_card >= self.previous_card:
+            return 100
+        elif self.guess == "h" and self.current_card < self.previous_card:
+            return -75
+        elif self.guess == "l" and self.current_card <= self.previous_card:
+            return 100
+        else:
+            return -75
