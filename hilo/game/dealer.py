@@ -6,10 +6,12 @@ class Dealer:
         self.previous_card = 0
         self.guess = ""
 
-    def draw_card():
+    def draw_card(self):
         """
         Returns a random card, 1-13
         """
+        self.previous_card == self.current_card
+        self.current_card = random.randint(1, 13)
         pass
     def ask_user(self):
         """
@@ -23,7 +25,7 @@ class Dealer:
         """
         Determines whether the player can still play, then asks if they would like to play again
         """
-        pass
+        return (self.points <= 0)
     def get_points(self):
         """
         Returns points based on the user's guess
