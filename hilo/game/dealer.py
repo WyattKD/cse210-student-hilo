@@ -2,17 +2,16 @@ import random
 
 class Dealer:
     def __init__(self):
-        self.current_card = 0
+        self.current_card = random.randint(1, 13)
         self.previous_card = 0
         self.guess = ""
-
+        self.score = 0
     def draw_card(self):
         """
         Returns a random card, 1-13
         """
-        self.previous_card == self.current_card
+        self.previous_card = self.current_card
         self.current_card = random.randint(1, 13)
-        pass
     def ask_user(self):
         """
         Determines the user's guess
@@ -25,7 +24,7 @@ class Dealer:
         """
         Determines whether the player can still play, then asks if they would like to play again
         """
-        return (self.points <= 0)
+        return (self.score > 0)
     def get_points(self):
         """
         Returns points based on the user's guess
