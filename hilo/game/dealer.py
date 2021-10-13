@@ -5,7 +5,7 @@ class Dealer:
         self.current_card = random.randint(1, 13)
         self.previous_card = 0
         self.guess = ""
-        self.score = 0
+        self.score = 300
     def draw_card(self):
         """
         Returns a random card, 1-13
