@@ -18,7 +18,7 @@ class Director:
             self (Director): an instance of Director.
         """
         self.keep_playing = True
-        self.score = 0
+        self.score = 300
         self.card_list = [0, "A", 2, 3, 4, 5, 6, 7, 8, 9, 10 ,"J", "Q", "K"]
         self.dealer = Dealer()
 
